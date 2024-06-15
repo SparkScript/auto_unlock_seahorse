@@ -18,7 +18,9 @@ The following steps and scripts assumes you are using a Nitrokey 3. If you use a
      sudo groupadd -f input
      sudo usermod -a -G input $USER
    ```
-2. If not already done, store your keyring password on your Nitrokey
+2. Install "nitropy", if not already done, as described <a href="https://docs.nitrokey.com/software/nitropy/all-platforms/installation">here</a>
+
+3. If not already done, store your keyring password on your Nitrokey
    ```sh
    nitropy nk3 secrets add-password PASSWORD_NAME --password PASSWORD
    ``` 
@@ -29,8 +31,8 @@ The following steps and scripts assumes you are using a Nitrokey 3. If you use a
    cd auto_unlock_seahorse
    chmod u+x unlock-seahorse
    ```
-7. place the scripts where you want them and configure the paths and names in "unlock-seahorse" accordingly
-8. add "unlock-seahorse" to autostart after login 
+6. place the scripts where you want them and configure the paths and names in "unlock-seahorse" accordingly
+7. add "unlock-seahorse" to autostart after login 
 
 ## Background
 The bash-script "unlock-seahorse" checks if there is a Nitrokey present and tries to read the password from the key-secrets. This is (hopefully) a secure storage for passwords. Having successfully retrieved the password, the python-script "trigger-seahorse.py" uses the DBUS secret service to determine if the keyring is locked and tries to unlock it, if needed.
