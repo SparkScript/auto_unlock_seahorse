@@ -31,7 +31,12 @@ The following steps and scripts assumes you are using a Nitrokey 3. If you use a
    cd auto_unlock_seahorse
    chmod u+x unlock-seahorse
    ```
-6. place the scripts where you want them and configure the paths and names in "unlock-seahorse" accordingly
+6. place the scripts where you want them and configure the paths and names in "unlock-seahorse" accordingly, e.g. the following paths
+  ```sh
+    whereis nitropy
+    whereis python3
+    whereis dotool
+``` 
 7. add "unlock-seahorse" to autostart after login 
 
 ## Background
